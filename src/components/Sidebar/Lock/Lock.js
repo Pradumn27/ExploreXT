@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import "./Lock.css"
 
 function Lock() {
-    const [modal, setModal] = useState(false)
+    const [modal, setModal] = useState(true)
 
     const [otp1, setOtp1] = useState("")
     const [otp2, setOtp2] = useState("")
@@ -35,17 +35,6 @@ function Lock() {
                 elmnt.target.form.elements[next].focus()
             }
         }
-    }
-
-    const handeleClick = () => {
-        if (otp1 == "1" && otp2 == "2" && otp3 == "3" && otp4 == "4") {
-            setModal(false)
-            sessionStorage.setItem("modal", false)
-        }
-        setOtp1("")
-        setOtp2("")
-        setOtp3("")
-        setOtp4("")
     }
 
     const handleLock = () => {
