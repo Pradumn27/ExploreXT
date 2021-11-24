@@ -1,0 +1,20 @@
+.breadcrumb {
+  width: 70%;
+}
+
+.breadcrumb > ul {
+  display: flex;
+}
+
+.bread-li {
+  font-size: 120%;
+  padding: 0% 1%;
+}
+
+.bread-li > h4 {
+  cursor: pointer;
+}
+
+.bread-li > link {
+  text-decoration: none;
+}
