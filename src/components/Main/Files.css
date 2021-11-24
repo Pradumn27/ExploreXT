@@ -45,7 +45,8 @@
 
 .inp > textarea {
   background-color: rgb(44, 45, 49);
-  border: 0.1px solid black;
+  border: 1px solid black;
+  padding: 4%;
 }
 
 .modall-inp {
