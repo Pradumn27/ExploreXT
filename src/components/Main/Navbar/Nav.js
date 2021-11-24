@@ -1,6 +1,6 @@
 import React from 'react'
 import Add from './Add';
-import Search from './Search';
+import Search from './Search/Search';
 import "./Nav.css"
 import FolderBreadcrumbs from './Breadcrumb/FolderBreadcrumb';
 

@@ -1,12 +1,11 @@
 import React, { useState } from 'react'
 import document from "../../assets/document.png";
-import { database } from '../Firebase/firebase';
+import { database } from '../../Firebase/firebase';
 
 function File({ childFile, childIds, index }) {
 
     const [desc, setDesc] = useState(childFile.description);
     const [modal, setModal] = useState(false);
-
 
     const handleFileClick = () => {
         var id = Object.entries(childIds)[index][1];

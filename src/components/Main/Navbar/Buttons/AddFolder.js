@@ -1,11 +1,10 @@
-import React, { useContext, useState } from 'react'
+import React, { useState } from 'react'
 import "./Buttons.css"
-import document from "../../../assets/document.png"
-import { database } from "../../Firebase/firebase"
-import { ROOT_FOLDER, useFolder } from "../../../hooks/useFolder"
-import { GlobalContext } from '../../../Context/GlobalState'
+import document from "../../../../assets/document.png"
+import { database } from "../../../../Firebase/firebase"
+import { ROOT_FOLDER } from "../../../../hooks/useFolder"
 
-function AddFolder({ currentFolder }) {
+function AddFolder({ currentFolder, setOpen }) {
 
     const [modal, setModal] = useState(false)
     const [folder, setFolder] = useState("")
@@ -13,7 +12,8 @@ function AddFolder({ currentFolder }) {
     const handleClick = () => {
         setModal(!modal)
     }
-    const handleClickModal = () => {
+    const handleSubmit = (e) => {
+        e.preventDefault()
         if (currentFolder == null) {
             setModal(false);
             return
@@ -32,6 +32,7 @@ function AddFolder({ currentFolder }) {
         })
         setFolder("")
         setModal(false)
+        setOpen(false)
     }
 
     return (
@@ -40,12 +41,14 @@ function AddFolder({ currentFolder }) {
             {modal && (<div className="modal">
                 <div className="in-modal">
                     <div className="modal-inp">
-                        <img className="modal-img" src={document} alt="doc" />
-                        <div className="inp">
-                            <input type="text" placeholder="Enter Folder name.." onChange={(e) => setFolder(e.target.value)} />
-                        </div>
+                        <form onSubmit={(e) => handleSubmit(e)} className="formm">
+                            <div className="inpp">
+                                <img className="modal-img" src={document} alt="doc" />
+                                <input type="text" className="add-inp" placeholder="Enter Folder name.." onChange={(e) => setFolder(e.target.value)} />
+                            </div>
+                            <input type="submit" className="modal-btn" value="Create Folder" />
+                        </form>
                     </div>
-                    <div onClick={() => handleClickModal()} className="modal-btn">Create Folder</div>
                 </div>
             </div>)}
         </>

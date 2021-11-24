@@ -3,6 +3,7 @@ import AppReducer from './AppReducer';
 
 const initialState = {
     currentFolderId: null,
+    search: "",
 }
 
 export const GlobalContext = createContext(initialState);
@@ -16,10 +17,18 @@ export const GlobalProvider = ({ children }) => {
             payload: id
         })
     }
+    function changeSearch(some) {
+        dispatch({
+            type: 'CURRENT_SEARCH',
+            payload: { search: some }
+        })
+    }
 
     return (<GlobalContext.Provider value={{
         currentFolderId: state.currentFolderId,
-        changeFolder
+        search: state.search,
+        changeFolder,
+        changeSearch
     }}>
         {children}
     </GlobalContext.Provider>)

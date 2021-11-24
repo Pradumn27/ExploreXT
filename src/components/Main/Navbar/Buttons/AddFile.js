@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import "./Buttons.css"
-import document from "../../../assets/document.png"
-import { database } from '../../Firebase/firebase'
+import document from "../../../../assets/document.png"
+import { database } from '../../../../Firebase/firebase'
 
-function AddFile({ currentFolder }) {
+function AddFile({ currentFolder, setOpen }) {
 
     const [modal, setModal] = useState(false)
     const [file, setFile] = useState("")
@@ -11,7 +11,7 @@ function AddFile({ currentFolder }) {
         setModal(!modal)
     }
 
-    const handleFileClick = () => {
+    const handleSubmit = () => {
 
         if (currentFolder == null) {
             setModal(false);
@@ -26,6 +26,7 @@ function AddFile({ currentFolder }) {
         })
 
         setModal(false)
+        setOpen(false)
     }
 
     return (
@@ -34,12 +35,14 @@ function AddFile({ currentFolder }) {
             {modal && (<div className="modal">
                 <div className="in-modal">
                     <div className="modal-inp">
-                        <img className="modal-img" src={document} alt="doc" />
-                        <div className="inp">
-                            <input type="text" placeholder="Enter File name.." onChange={(e) => setFile(e.target.value)} />
-                        </div>
+                        <form onSubmit={(e) => handleSubmit(e)} className="formm">
+                            <div className="inpp">
+                                <img className="modal-img" src={document} alt="doc" />
+                                <input type="text" className="add-inp" placeholder="Enter File name.." onChange={(e) => setFile(e.target.value)} />
+                            </div>
+                            <input type="submit" className="modal-btn" value="Create File" />
+                        </form>
                     </div>
-                    <div onClick={() => handleFileClick()} className="modal-btn">Create File</div>
                 </div>
             </div>)}
         </>

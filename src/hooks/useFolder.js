@@ -1,5 +1,5 @@
 import { useReducer, useEffect } from "react"
-import { database } from "../components/Firebase/firebase"
+import { database } from "../Firebase/firebase"
 
 const ACTIONS = {
     SELECT_FOLDER: "select-folder",

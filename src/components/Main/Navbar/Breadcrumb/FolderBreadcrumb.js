@@ -1,6 +1,6 @@
 import React, { useContext } from "react"
-import { GlobalContext } from "../../../Context/GlobalState"
-import { ROOT_FOLDER, useFolder } from "../../../hooks/useFolder"
+import { GlobalContext } from "../../../../Context/GlobalState"
+import { ROOT_FOLDER, useFolder } from "../../../../hooks/useFolder"
 import "./Breadcrumb.css"
 
 export default function FolderBreadcrumbs() {

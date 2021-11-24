@@ -1,0 +1,18 @@
+.inp {
+  padding-right: 1.5%;
+  font-family: Arial, Helvetica, sans-serif;
+  border: 0.1px rgb(44, 45, 49);
+  background-color: rgb(44, 45, 49);
+  display: flex;
+  align-items: center;
+  border-radius: 27px 27px 27px 27px;
+}
+
+.inp input {
+  padding: 4%;
+  background-color: rgb(44, 45, 49);
+  width: 11rem;
+  height: 1.5rem;
+  border: 0.1px rgb(44, 45, 49);
+  font-size: 100%;
+}

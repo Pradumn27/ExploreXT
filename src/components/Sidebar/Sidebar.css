@@ -11,6 +11,7 @@
 
 .left-top {
   padding-top: 10%;
+  padding-bottom: 6%;
   display: flex;
   align-items: center;
 }
@@ -24,6 +25,7 @@
 }
 
 .left-bottom {
+  padding-top: 6%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -45,8 +47,8 @@
 }
 
 .mid {
-  padding-top: 16%;
-  height: 72%;
+  padding-top: 13%;
+  height: 68%;
   width: 90%;
   overflow-y: auto;
   -ms-overflow-style: none; /* IE and Edge */

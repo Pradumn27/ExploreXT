@@ -3,6 +3,7 @@
 }
 
 .breadcrumb > ul {
+  padding: 0;
   display: flex;
 }
 

@@ -11,6 +11,14 @@ function Lock() {
 
     const handleSubmit = (e) => {
         e.preventDefault()
+        if (otp1 == "1" && otp2 == "2" && otp3 == "3" && otp4 == "4") {
+            setModal(false)
+            sessionStorage.setItem("modal", false)
+        }
+        setOtp1("")
+        setOtp2("")
+        setOtp3("")
+        setOtp4("")
     }
 
     const inputfocus = (elmnt) => {
@@ -54,9 +62,8 @@ function Lock() {
         <>
             {modal && (
                 <div className="modal">
-                    <div className="in-modal">
-
-                        <form onSubmit={handleSubmit}>
+                    <div className="in-modaal">
+                        <form onSubmit={handleSubmit} className="form">
                             <div className="otpContainer">
 
                                 <input
@@ -103,10 +110,8 @@ function Lock() {
                                 />
 
                             </div>
+                            <input type="submit" value="Unlock" className="modaal-btn" />
                         </form>
-                        <div onClick={() => handeleClick()} className="modal-btn">
-                            Unlock
-                        </div>
                     </div>
                 </div>)
             }
