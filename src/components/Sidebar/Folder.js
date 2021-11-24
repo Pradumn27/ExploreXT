@@ -1,5 +1,4 @@
 import React, { useContext, useState } from "react"
-import { NavLink } from "react-router-dom";
 import folderOpen from "../../assets/folder-open.png";
 import { GlobalContext } from "../../Context/GlobalState";
 import { useFolder } from "../../hooks/useFolder";
@@ -15,9 +14,7 @@ export default function Folder({ folderr }) {
 
     return (
         <>
-            <h4
-            // to={`/folder/${folderr.id}`}
-            >
+            <h4>
                 <div class="caret"
                     onClick={() => handleClick()}
                 >

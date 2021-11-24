@@ -12,7 +12,7 @@ function Search() {
 
     return (
         <div className="inp">
-            <input type="text" placeholder="Search..." onChange={(e) => handleChange(e)} />
+            <input type="text" className="input" placeholder="Search..." onChange={(e) => handleChange(e)} />
             <BsSearch />
         </div>
     )

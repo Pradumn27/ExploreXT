@@ -8,11 +8,18 @@
   border-radius: 27px 27px 27px 27px;
 }
 
-.inp input {
+.input {
+  text-decoration: none;
   padding: 4%;
   background-color: rgb(44, 45, 49);
   width: 11rem;
   height: 1.5rem;
   border: 0.1px rgb(44, 45, 49);
+  border-radius: 27px 27px 27px 27px;
   font-size: 100%;
+  margin-right: 3%;
+}
+
+.input:focus {
+  border: 3px solid white;
 }

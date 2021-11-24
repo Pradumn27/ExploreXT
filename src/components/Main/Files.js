@@ -12,13 +12,22 @@ function Files() {
     return (
         <>
             <div className="files">
-                {childFiles.length > 0 && childIds && childFiles.map(childFile => (
-                    <>
-                        {(childFile.name.includes(search.search) || childFile.description.includes(search.search)) && (
+
+                {search ?
+                    (childFiles.length > 0 && childIds && childFiles.map(childFile => (
+                        <>
+                            {(childFile.name.includes(search.search) || childFile.description.includes(search.search)) && (
+                                <File key={childFile.id} index={i++} childFile={childFile} childIds={childIds} />
+                            )}
+                        </>)
+                    ))
+                    :
+                    (childFiles.length > 0 && childIds && childFiles.map(childFile => (
+                        <>
                             <File key={childFile.id} index={i++} childFile={childFile} childIds={childIds} />
-                        )}
-                    </>)
-                )}
+                        </>)
+                    ))
+                }
             </div>
         </>
     )
